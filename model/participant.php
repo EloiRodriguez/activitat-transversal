@@ -3,16 +3,17 @@
     class Participant {
         private $id_part;
         private $nom_part;
-        private $cognom_part;
+        private $primer_cognom;
+        private $segon_cognom;
         private $dni_part;
         private $data_naix;
         private $sexe;
 
-        public function __construct($id_part,$nom_part,$cognom_part,$dni_part,$data_naix,$sexe)
+        public function __construct($dni_part,$nom_part,$primer_cognom,$segon_cognom,$data_naix,$sexe)
         {
-            $this->id_part=$id_part;
             $this->nom_part=$nom_part;
-            $this->cognom_part=$cognom_part;
+            $this->primer_cognom=$primer_cognom;
+            $this->segon_cognom=$segon_cognom;
             $this->dni_part=$dni_part;
             $this->data_naix=$data_naix;
             $this->sexe=$sexe;
@@ -59,25 +60,45 @@
         }
 
         /**
-         * Get the value of cognom_part
+         * Get the value of primer_cognom
          */ 
-        public function getCognom_part()
+        public function getPrimer_cognom()
         {
-                return $this->cognom_part;
+                return $this->primer_cognom;
         }
 
         /**
-         * Set the value of cognom_part
+         * Set the value of primer_cognom
          *
          * @return  self
          */ 
-        public function setCognom_part($cognom_part)
+        public function setPrimer_cognom($primer_cognom)
         {
-                $this->cognom_part = $cognom_part;
+                $this->primer_cognom = $primer_cognom;
 
                 return $this;
         }
 
+        /**
+         * Get the value of segon_cognom
+         */ 
+        public function getSegon_cognom()
+        {
+                return $this->segon_cognom;
+        }
+
+        /**
+         * Set the value of segon_cognom
+         *
+         * @return  self
+         */ 
+        public function setSegon_cognom($segon_cognom)
+        {
+                $this->segon_cognom = $segon_cognom;
+
+                return $this;
+        }
+        
         /**
          * Get the value of dni_part
          */ 
@@ -137,4 +158,6 @@
 
                 return $this;
         }
+
+
     }

@@ -56,7 +56,9 @@ VALUES  ('Juvenil: Masculina'),
         ('Elite: Masculina'),
         ('Elite: Femenina'),
         ('Veterano: Masculina'),
-        ('Veterano: Femenina');
+        ('Veterano: Femenina'),
+        ('Senior: Masculina'),
+        ('Senior: Femenina');
 
 
 INSERT INTO tbl_usuario (email_usu,pwd_usu) VALUES  ('administrador@admin.com',' 827ccb0eea8a706c4c34a16891f84e7b');

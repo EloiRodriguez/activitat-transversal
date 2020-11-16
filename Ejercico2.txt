@@ -1,0 +1,18 @@
+Crear:
+front inscripcion.php
+lógica de inscripciones (PDO, beginTransaction, commit, etc.) (hecho)
+
+Validación de formulario con JS:
+// Campos obligatorios (hecho)
+// DNI en formato correcto (hecho)
+Validaciones PHP:
+Si el usuario no se ha inscrito a la carrera actual{ (echo)
+	// Inserto participante e inscripción (usar transacciones) (hecho)
+	// Redirección a la página de inscripciones: (hecho)
+		// en inscripción muestro un mensaje de que todo ha ido OK (hecho)
+		// y muestro un botón para viajar a la página principal (hecho)
+}En otro caso{
+	// El DNI introducido ya está registrado en la carrera
+	// Redirección a la página de inscripciones (hecho)
+		// utilizar variable por url para mostrar error (p. ex.: &error=1)(hecho)
+}
