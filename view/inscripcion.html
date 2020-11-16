@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/ico" href="../img/logo.ico">
-    <script src="../js/inscripcion.js"></script>
+    <script src="../js/validacion.js"></script>
     <title>Genshin Impact</title>
 </head>
 
 <script>
     function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
     }
 </script>
+
 <body>
 
     <div class="topnav" id="myTopnav">
@@ -27,8 +29,8 @@
         <div class="icono">
             <img src="../img/logo.png">
         </div>
-        
-        <a  style="margin-left: 15%;" href="../index.html" class="active">Inici</a>
+
+        <a style="margin-left: 15%;" href="../index.html" class="active">Inici</a>
         <a href="classificacions.html">Classificacions</a>
         <a href="inscripcion.html">Inscripcions</a>
         <a href="noticies.html">Noticies</a>
@@ -36,7 +38,7 @@
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
-        
+
 
         <div class="idioma">
             <form action="" method="POST">
@@ -48,24 +50,29 @@
             </form>
         </div>
     </div>
-    
+
     <div class="entrada2">
-        
+
         <div class="form_inscrip">
             <h2 style="opacity: 0.2;">Omple las tevas dades!</h2>
-            <form action="../model/inscrivir.php" method="POST" onsubmit="return validacionForm()">
-                <input style="margin-right: 5px; width: 45%;" type="text" id="dni" name="dni" placeholder="DNI...">
-                <input style="width: 45%;" type="text" id="nom" name="nom" placeholder="Nom..."><br>
-                <input style="margin-right: 5px; width: 45%;" type="text" id="cognom1" name="cognom1" placeholder="Primer Cognom...">
-                <input style="width: 45%;" type="text" id="cognom2" name="cognom2" placeholder="Segon Cognom..."><br>
-                <input type="date" id="data_naix" name="data_naix" placeholder="Fecha Nacimento..."><br>
-                <select name="sexe" id="sexe" placeholder="Sexo...">
-                    <option disabled selected>Sexo...</option>
+            <form action="../model/inscrivir.php" method="POST" onsubmit="return validarFor()">
+                <input style="margin-right: 5px; width: 45%;" type="text" id="dni" class="validar" name="dni" placeholder="DNI...">
+
+                <input style="width: 45%;" type="text" id="nom" class="validar" name="nom" placeholder="Nom..."><br>
+
+                <input style="margin-right: 5px; width: 45%;" type="text" id="cognom1" class="validar" name="cognom1" placeholder="Primer Cognom...">
+
+                <input style="width: 45%;" type="text" id="cognom2" class="validar" name="cognom2" placeholder="Segon Cognom..."><br>
+
+                <input type="date" id="data_naix" name="data_naix" class="validar" placeholder="Fecha Nacimento..."><br>
+
+                <select name="sexe" id="sexe" class="validar">
+                    <option disabled selected value="">Sexo...</option>
                     <option value="Masculino">Hombre</option>
                     <option value="Femenino">Mujer</option>
                 </select><br>
-                <select name="edad" id="edad" >
-                    <option disabled selected>Edad...</option>
+                <select name="edad" id="edad" class="validar">
+                    <option disabled selected value="">Edad...</option>
                     <option value="Juvenil">Juvenil = 8 a 12 años</option>
                     <option value="Junior">Junior = 13 a 15 años</option>
                     <option value="Elite">Elite = 16 a 25 años</option>
@@ -74,14 +81,15 @@
                 </select><br>
                 <input type="submit" id="error" value="Incrivirse">
             </form>
-            <div id="mensaje"></div>    
+            <div id="mensaje"></div>
         </div>
 
 
     </div>
-    
+
     <footer>
 
     </footer>
 </body>
+
 </html>
