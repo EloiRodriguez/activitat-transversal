@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/ico" href="../img/logo.ico">
     <script src="../js/validacion.js"></script>
-    <title>Genshin Impact</title>
+    <title>Cursa bellvitge 2021</title>
 </head>
 
 <script>
@@ -27,10 +27,10 @@
     <div class="topnav" id="myTopnav">
 
         <div class="icono">
-            <img src="../img/logo.png">
+            <img src="../img/logotipo.png">
         </div>
 
-        <a style="margin-left: 15%;" href="../index.html" class="active">Inici</a>
+        <a style="margin-left: 5%;" href="../index.html" class="active">Inici</a>
         <a href="classificacions.html">Classificacions</a>
         <a href="inscripcion.html">Inscripcions</a>
         <a href="noticies.html">Noticies</a>
@@ -49,13 +49,14 @@
                 <input type="submit" value="submit">
             </form>
         </div>
+
     </div>
 
     <div class="entrada2">
 
         <div class="form_inscrip">
             <h2 style="opacity: 0.2;">Omple las tevas dades!</h2>
-            <form action="../model/inscrivir.php" method="POST" onsubmit="return validarFor()">
+            <form action="../model/inscrivir.php" method="POST" onsubmit="return validacionForm()">
                 <input style="margin-right: 5px; width: 45%;" type="text" id="dni" class="validar" name="dni" placeholder="DNI...">
 
                 <input style="width: 45%;" type="text" id="nom" class="validar" name="nom" placeholder="Nom..."><br>
@@ -64,7 +65,7 @@
 
                 <input style="width: 45%;" type="text" id="cognom2" class="validar" name="cognom2" placeholder="Segon Cognom..."><br>
 
-                <input type="date" id="data_naix" name="data_naix" class="validar" placeholder="Fecha Nacimento..."><br>
+                <input type="date" id="data_naix" class="validar" name="data_naix" placeholder="Fecha Nacimento..."><br>
 
                 <select name="sexe" id="sexe" class="validar">
                     <option disabled selected value="">Sexo...</option>
@@ -81,14 +82,42 @@
                 </select><br>
                 <input type="submit" id="error" value="Incrivirse">
             </form>
+
             <div id="mensaje"></div>
+
         </div>
 
 
     </div>
 
     <footer>
-
+        <div class="auto_presentacion">
+            <h1>Cursa Bellvitge</h1>
+            <h1>2021</h1>
+        </div>
+        <div class="footer_nav">
+            <ul>
+                <li>
+                    <h1>LINKS RAPIDOS</h1>
+                </li>
+                <li><a href="../index.html">Inici</a></li>
+                <li><a href="classificacions.html">Classificacions</a></li>
+                <li><a href="inscripcion.html">Inscripcions</a></li>
+                <li><a href="noticies.html">Noticies</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+            </ul>
+        </div>
+        <div class="contactos">
+            <ul>
+                <li>
+                    <h1>CONTACTOS</h1>
+                </li>
+                <li>25 de Febrero 2021</li>
+                <li>Desde: Avinguda de la Mare de Déu de Bellvitge, Hospitalet de Llobregat, Barcelona, Cataluña</li>
+                <li>Circuito 98%</li>
+            </ul>
+        </div>
+        <div class="pie_final">Copyright 2006 Cursa Ciclista Bellvitge. All right reserved</div>
     </footer>
 </body>
 

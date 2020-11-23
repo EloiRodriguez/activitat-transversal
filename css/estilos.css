@@ -1,72 +1,71 @@
-* 
-{
-  box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
 
-html, body {
-	margin: 0;
-  padding: 0;
-  background-color: #a5e7dc;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #6d6d6d;
 }
+
 
 /*barra de navegacion*/
+
 .topnav {
-  overflow: hidden;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: rgb(55, 54, 63);
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: rgb(55, 54, 63);
 }
 
-#buscador{
-  float: inline-end;
+#buscador {
+    float: inline-end;
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 25px;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    margin-top: 1%;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
 }
 
 .topnav a:hover {
-  text-decoration: underline;
-  color: white;
+    text-decoration: underline;
+    color: white;
 }
-
 
 .topnav .icon {
-  display: none;
+    display: none;
 }
 
-.icono
-{
-  position: relative;
-  float: left;
-  width: auto;
-  height: auto;
+.icono {
+    position: relative;
+    float: left;
+    width: auto;
+    height: auto;
 }
 
-.icono img
-{
-  width: 137px;
-  height: 50px;
+.icono img {
+    width: 250px;
+    height: 80px;
 }
 
-.idioma
-{
-  float: right;
-  padding-top: 20px;
-  width: 200px;
-  height: 50px;
+.idioma {
+    float: right;
+    padding-top: 20px;
+    width: 200px;
+    height: 50px;
 }
 
 
 /*Paguina Inicio*/
-  .entrada1
-  {
+
+.entrada1 {
     margin: 0;
     height: 92vh;
     background-image: url(../img/Portada1.jpg);
@@ -74,20 +73,17 @@ html, body {
     background-position: center;
     background-size: cover;
     text-align: center;
-  }
+}
 
-  .portada
-  {
+.portada {
     padding-top: 60px;
-  }
+}
 
-  .imagen 
-  {
+.imagen {
     margin: auto;
-  }
+}
 
-  .inscripcion
-  {
+.inscripcion {
     margin: auto;
     border-radius: 3%;
     width: 250px;
@@ -95,24 +91,21 @@ html, body {
     border-color: white;
     border-collapse: unset;
     background: none;
-  }
+}
 
-  .inscripcion a
-  {
+.inscripcion a {
     text-decoration: none;
     color: white;
     font-size: 30px;
-  }
+}
 
-  .reloj
-  {
+.reloj {
     width: 100%;
     height: 20vh;
     background-color: rgb(15, 194, 201);
-  }
+}
 
-  .bienvenida
-  {
+.bienvenida {
     width: 100%;
     height: 50vh;
     background-color: rgb(15, 194, 201);
@@ -121,36 +114,37 @@ html, body {
     background-position: center;
     background-size: auto;
     background-size: cover;
-  }
+}
 
-  .bienvenida div
-  {
+.bienvenida div {
     width: 50%;
     height: auto;
-  }
+}
+
 
 /*Paguina Inscripcion*/
-  .entrada2
-  {
+
+.entrada2 {
     margin: 0;
-    height: 91vh;
+    height: 86.6vh;
     background-image: url(../img/Portada2.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-  }
+    background-size: contain;
+}
 
-  .form_inscrip
-  {
+.form_inscrip {
     float: right;
     width: auto;
     height: auto;
-    padding-top: 3%;
-    padding-right: 13%;
+    padding-top: 1%;
+    margin-right: 16%;
     padding-left: 13%;
-  }
+}
 
-  .form_inscrip input[type=text], .form_inscrip input[type=date], .form_inscrip select {
+.form_inscrip input[type=text],
+.form_inscrip input[type=date],
+.form_inscrip select {
     width: 92%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -158,9 +152,9 @@ html, body {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+}
 
-  .form_inscrip input[type=submit] {
+.form_inscrip input[type=submit] {
     width: 92%;
     background-color: #4CAF50;
     color: white;
@@ -169,42 +163,89 @@ html, body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
 
-  .form_inscrip input[type=submit]:hover {
+.form_inscrip input[type=submit]:hover {
     background-color: #45a049;
-  }
+}
 
-  .form_inscrip div {
+.form_inscrip div {
     border-radius: 5px;
     background-color: #ffffff;
     padding: 20px;
-  }
+}
 
-  .mensaje
-  {
+.mensaje {
     background-color: white;
-  }
-
-@media screen and (max-width: 600px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
 }
 
 
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
+/*Footer*/
+
+footer {
+    width: 100%;
+    height: 45vh;
+    background-color: rgb(55, 54, 63);
+    padding: 2;
+    margin: 0;
+    text-align: center;
+}
+
+footer div {
+    margin: 4%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-top: 1%;
     text-align: left;
-  }
+    float: left;
+    width: 25vw;
+    height: auto;
+}
+
+.footer_nav li,
+.contactos li {
+    color: white;
+    list-style: none;
+}
+
+.footer_nav a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none
+}
+
+.pie_final {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    width: 100%;
+    height: 5vh;
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
 }

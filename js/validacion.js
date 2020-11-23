@@ -1,66 +1,100 @@
-function validacionForm() {
+window.onload = function() {
+    var dni = document.getElementsByClassName('validar')[0];
+    var edad = document.getElementsByClassName('validar')[7];
+    dni.addEventListener("focusout", validarDNI);
+    edad.addEventListener("focusout", autorellenarEdad);
 
 }
 
-function validarFor() {
-    //alert('hola')
+function validarDNI() {
 
-    /**
-     * Primera Forma
-     */
+    var dni = document.getElementsByClassName('validar')[0].value;
+    var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
-    // var inputs = document.getElementsByTagName("input");
+    if (!(numeracion < 0) || !(numeracion >= 99999999)) {
+        var numeracion = dni.slice(0, 8);
+        var letraInicial = dni.charAt(8);
+        var letraMayuscula = letraInicial.toUpperCase();
 
-    // for (let i = 0; i < inputs.length; i++) {
-    //     if (inputs[i].type == 'text' || inputs[i].type == 'date' || inputs[i].type == 'email') {
-
-    //         if (inputs[i].type == 'text' && inputs[i].value == '') {
-    //             inputs[i].style.borderColor = 'red';
-    //         } else {
-    //             inputs[i].style.borderColor = 'none';
-    //         }
-
-    //         if (inputs[i].type == 'date' && inputs[i].value == '') {
-    //             inputs[i].style.borderColor = 'red';
-    //         } else {
-    //             inputs[i].style.borderColor = 'none';
-    //         }
-
-    //         if (inputs[i].type == 'email' && inputs[i].value == '') {
-    //             inputs[i].style.borderColor = 'red';
-    //         } else {
-    //             inputs[i].style.borderColor = 'none';
-    //         }
-    //     }
-    // }
-
-    // var sexe = document.getElementById('sexe');
-
-    // if (sexe.value == '') {
-    //     sexe.style.borderColor = 'red';
-    // } else {
-    //     sexe.style.borderColor = 'none';
-    // }
-
-    // var edad = document.getElementById('edad');
-
-    // if (edad.value == '') {
-    //     edad.style.borderColor = 'red';
-    // } else {
-    //     edad.style.borderColor = 'none';
-    // }
-
-    /**
-     * Segunda Forma
-     */
-
-    var validados = document.getElementsByClassName('validar');
-    for (let i = 0; i < validados.length; i++) {
-        if (validados[i].value == '') {
-            validados[i].style.borderColor = 'red';
+        if (letraInicial != letraMayuscula) {
+            document.getElementById('dni').style.border = "2px solid red";
         } else {
-            validados[i].style.borderColor = 'none';
+            var letraFinal = numeracion % 23;
+            //alert(letras[letraFinal]);
+
+            if (letraInicial != letras[letraFinal]) {
+                document.getElementById('dni').style.border = "2px solid red";
+            } else {
+                document.getElementById('dni').style.border = "2px solid green";
+            }
         }
     }
-    return false;
+}
+
+function autorellenarEdad() {
+    var edad = document.getElementsByClassName('validar')[7].value;
+    var sexo = document.getElementById(sexe).value;
+
+    if (sexo == "") {
+        document.getElementById('mensaje').innerHTML = "<p>No se ha especificado el sexo</p>";
+        document.getElementById('mensaje').style.color = "black";
+        document.getElementById('mensaje').style.backgroundColor = '#FA788D';
+        document.getElementById('mensaje').style.borderRadius = "4px";
+        document.getElementById('mensaje').style.padding = "0.5%";
+    } else {
+        if (edad >= 8 && edad <= 12) {
+            if (sexo == 'Masculino') {
+                $cat = 1;
+            } else if (sexo == 'Femenino') {
+                $cat = 2;
+            }
+        } else if (edad >= 13 && edad <= 15) {
+            if (sexo == 'Masculino') {
+                $cat = 3;
+            } else if (sexo == 'Femenino') {
+                $cat = 4;
+            }
+        } else if (edad >= 16 && edad <= 25) {
+            if (sexo == 'Masculino') {
+                $cat = 5;
+            } else if (sexo == 'Femenino') {
+                $cat = 6;
+            }
+        } else if (edad >= 26 && edad <= 50) {
+            if (sexo == 'Masculino') {
+                $cat = 7;
+            } else if (sexo == 'Femenino') {
+                $cat = 8;
+            }
+        } else if (edad >= 51 && edad <= 80) {
+            if (sexo == 'Masculino') {
+                $cat = 9;
+            } else if (sexo == 'Femenino') {
+                $cat = 10;
+            }
+        }
+
+        return $cat
+    }
+}
+
+
+function validacionForm() {
+    var validados = document.getElementsByClassName('validar');
+    for (let i = 0; i < validados.length; i++) {
+        console.log(validados[i].value);
+        let valor = "";
+        if (validados[i].value == '') {
+            validados[i].style.borderColor = 'red';
+            valor = "false";
+        } else {
+            validados[i].style.borderColor = '#DCDCDC';
+        }
+
+        if (valor == "") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
