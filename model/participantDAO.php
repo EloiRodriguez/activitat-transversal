@@ -10,7 +10,7 @@
             $this->pdo=$pdo;
         }
 
-        public function insertarParticipante($participante,$edad){
+        public function insertarParticipante($participante,$cat){
 
             try {
                 $this->pdo->beginTransaction();
@@ -34,40 +34,6 @@
                 $sentencia->execute();
 
                 $id_part =$this->pdo->lastInsertId();
-
-                //Comprovar Categoria del Participante
-
-                if ($edad == 'Juvenil') {
-                    if ($sexe == 'Masculino') {
-                        $cat = 1;
-                    }else if ($sexe == 'Femenino') {
-                        $cat = 2;
-                    }
-                }else if ($edad == 'Junior') {
-                    if ($sexe == 'Masculino') {
-                        $cat = 3;
-                    }else if ($sexe == 'Femenino') {
-                        $cat = 4;
-                    }
-                }else if ($edad == 'Elite') {
-                    if ($sexe == 'Masculino') {
-                        $cat = 5;
-                    }else if ($sexe == 'Femenino') {
-                        $cat = 6;
-                    }
-                }else if ($edad == 'Veterano') {
-                    if ($sexe == 'Masculino') {
-                        $cat = 7;
-                    }else if ($sexe == 'Femenino') {
-                        $cat = 8;
-                    }
-                }else if ($edad == 'Senior') {
-                    if ($sexe == 'Masculino') {
-                        $cat = 9;
-                    }else if ($sexe == 'Femenino') {
-                        $cat = 10;
-                    }
-                }
 
                 
                 //Cursa que se realiza

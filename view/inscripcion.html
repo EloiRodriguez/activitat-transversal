@@ -54,6 +54,8 @@
 
     <div class="entrada2">
 
+        <img class="portada" src="../img/Portada2.jpg">
+
         <div class="form_inscrip">
             <h2 style="opacity: 0.2;">Omple las tevas dades!</h2>
             <form action="../model/inscrivir.php" method="POST" onsubmit="return validacionForm()">
@@ -72,18 +74,19 @@
                     <option value="Masculino">Hombre</option>
                     <option value="Femenino">Mujer</option>
                 </select><br>
-                <select name="edad" id="edad" class="validar">
-                    <option disabled selected value="">Edad...</option>
-                    <option value="Juvenil">Juvenil = 8 a 12 años</option>
-                    <option value="Junior">Junior = 13 a 15 años</option>
-                    <option value="Elite">Elite = 16 a 25 años</option>
-                    <option value="Veterano">Veterano = 26 a 50 años</option>
-                    <option value="Senior">Senior = 50 a 80 años</option>
+
+                <select name="invalidez" id="invalidez" class="validar">
+                    <option disabled selected value="">Tiene alguna discapacidad muscular?...</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
                 </select><br>
+                <label for="categoria">Categoria Asignada</label>
+                <input type="text" name="categoria" id="categoria" class="validar" disabled><br>
+
                 <input type="submit" id="error" value="Incrivirse">
             </form>
 
-            <div id="mensaje"></div>
+            <div id="mensaje" class="mensaje"></div>
 
         </div>
 

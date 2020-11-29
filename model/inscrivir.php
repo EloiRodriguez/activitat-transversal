@@ -8,12 +8,12 @@
     $segon_cognom=$_POST['cognom2'];
     $data_naix=$_POST['data_naix'];
     $sexe=$_POST['sexe'];
-    $edad=$_POST['edad'];
+    $cat=$_POST['categoria'];
 
     $part = new Participant($dni_part,$nom_part,$primer_cognom,$segon_cognom,$data_naix,$sexe);
     $partDAO = new ParticipantDao();
 
-    $partDAO->insertarParticipante($part,$edad);
+    $partDAO->insertarParticipante($part,$cat);
 
     echo "<div style='text-align: center; width: 100vw; height: 100vh;'>";
     echo "<div>";

@@ -6,7 +6,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: #6d6d6d;
 }
 
 
@@ -16,6 +15,7 @@ body {
     overflow: hidden;
     text-align: center;
     box-sizing: border-box;
+    height: 15vh;
     background-color: rgb(55, 54, 63);
 }
 
@@ -46,18 +46,20 @@ body {
 .icono {
     position: relative;
     float: left;
-    width: auto;
-    height: auto;
+    width: 16%;
+    height: 70px;
 }
 
 .icono img {
-    width: 250px;
-    height: 80px;
+    margin-top: 3%;
+    margin-left: 3%;
+    width: 100%;
+    height: 70px;
 }
 
 .idioma {
     float: right;
-    padding-top: 20px;
+    padding-top: 2.5%;
     width: 200px;
     height: 50px;
 }
@@ -126,24 +128,32 @@ body {
 
 .entrada2 {
     margin: 0;
-    height: 86.6vh;
-    background-image: url(../img/Portada2.jpg);
+    height: auto;
+    margin-bottom: 5%;
+    box-sizing: border-box;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
+.portada {
+    float: left;
+    padding: 0;
+    width: 40vw;
+    margin: 0;
+}
+
 .form_inscrip {
-    float: right;
+    float: left;
+    margin-left: 10%;
     width: auto;
     height: auto;
     padding-top: 1%;
-    margin-right: 16%;
-    padding-left: 13%;
 }
 
 .form_inscrip input[type=text],
 .form_inscrip input[type=date],
+.form_inscrip input[type=number],
 .form_inscrip select {
     width: 92%;
     padding: 12px 20px;
@@ -176,18 +186,20 @@ body {
 }
 
 .mensaje {
-    background-color: white;
+    display: none;
 }
 
 
 /*Footer*/
 
 footer {
+    float: left;
     width: 100%;
-    height: 45vh;
+    height: 53vh;
     background-color: rgb(55, 54, 63);
     padding: 2;
     margin: 0;
+    margin-top: 3%;
     text-align: center;
 }
 
@@ -198,8 +210,15 @@ footer div {
     padding-top: 1%;
     text-align: left;
     float: left;
-    width: 25vw;
+    width: 25%;
     height: auto;
+}
+
+.auto_presentacion {
+    color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-top: 1%;
 }
 
 .footer_nav li,
@@ -211,7 +230,7 @@ footer div {
 .footer_nav a {
     color: white;
     font-size: 20px;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .pie_final {
@@ -247,5 +266,34 @@ footer div {
         float: none;
         display: block;
         text-align: left;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        float: left;
+        width: 100%;
+        height: auto;
+        background-color: rgb(55, 54, 63);
+        padding: 2;
+        margin: 0;
+        text-align: center;
+    }
+    footer div {
+        margin: 4%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        padding-top: 1%;
+        text-align: left;
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+    .auto_presentacion {
+        color: white;
+        margin-top: 2%;
+        margin-left: 13%;
+        margin-bottom: 2%;
+        padding-top: 1%;
     }
 }
