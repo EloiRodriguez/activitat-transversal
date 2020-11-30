@@ -72,7 +72,7 @@ function autorellenarSexo() {
             categoria.placeholder = "Juvenil: Femenina";
             categoria.value = cat_num;
         }
-    } else if (sexo == "Juvenil") {
+    } else if (sexo == "Júnior") {
         if (sexo == 'Masculino') {
             cat_num = 3;
             categoria.placeholder = "Júnior: Masculina";
@@ -82,17 +82,17 @@ function autorellenarSexo() {
             categoria.placeholder = "Júnior: Femenina";
             categoria.value = cat_num;
         }
-    } else if (sexo == "Juvenil") {
+    } else if (sexo == "Elite") {
         if (sexo == 'Masculino') {
             cat_num = 5;
             categoria.placeholder = "Elite: Masculina";
             categoria.value = cat_num;
         } else if (sexo == 'Femenino') {
-            cat = 6;
+            cat_num = 6;
             categoria.placeholder = "Elite: Femenina";
             categoria.value = cat_num;
         }
-    } else if (sexo == "Juvenil") {
+    } else if (sexo == "Veterano") {
         if (sexo == 'Masculino') {
             cat_num = 7;
             categoria.value = "Veterano: Masculina";
@@ -102,7 +102,7 @@ function autorellenarSexo() {
             categoria.value = "Veterano: Femenina";
             categoria.value = cat_num;
         }
-    } else if (sexo == "Juvenil") {
+    } else if (sexo == "Senior") {
         if (sexo == 'Masculino') {
             cat_num = 9;
             categoria.value = "Senior: Masculina";
@@ -116,7 +116,9 @@ function autorellenarSexo() {
 }
 
 function autorellenarInvalidez() {
+    var categoria = document.getElementById('categoria');
     var invalidez = document.getElementById('invalidez').value;
+    var cat_num = "";
     var sexo = document.getElementById('sexe').value;
 
     if (invalidez == "si") {
