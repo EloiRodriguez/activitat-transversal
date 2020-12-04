@@ -1,3 +1,5 @@
+let validacion;
+
 window.onload = function() {
     var dni = document.getElementsByClassName('validar')[0];
     var fecha = document.getElementById('data_naix');
@@ -21,14 +23,17 @@ function validarDNI() {
 
         if (letraInicial != letraMayuscula) {
             document.getElementById('dni').style.border = "2px solid red";
+            validacion = 'false';
         } else {
             var letraFinal = numeracion % 23;
             //alert(letras[letraFinal]);
 
             if (letraInicial != letras[letraFinal]) {
                 document.getElementById('dni').style.border = "2px solid red";
+                validacion = 'false';
             } else {
                 document.getElementById('dni').style.border = "2px solid green";
+                validacion = 'true';
             }
         }
     }
@@ -43,76 +48,106 @@ function autorellenarCategoria() {
 
     if (edad >= 8 && edad <= 12) {
         cat.value = "Juvenil";
+        alert(cat.value);
     } else if (edad >= 13 && edad <= 15) {
         cat.value = "Júnior";
+        alert(cat.value);
     } else if (edad >= 16 && edad <= 25) {
         cat.value = "Elite";
+        alert(cat.value);
     } else if (edad >= 26 && edad <= 50) {
         cat.value = "Veterano";
+        alert(cat.value);
     } else if (edad >= 51 && edad <= 80) {
         cat.value = "Senior";
+        alert(cat.value);
     } else {
-        cat.value = "Edad demasiado temprana";
+        cat.placeholder = "Edad demasiado temprana o muy mayor";
+        alert(cat.value);
     }
+
+    document.getElementById('sexe').disabled = false;
 }
 
 function autorellenarSexo() {
     var categoria = document.getElementById('categoria');
+    var mensaje_cat = document.getElementById('mensaje_cat');
     var cat_num = "";
-    var sexo = addEventListener("focusout", autorellenarSexo);
+    var sexo = document.getElementById('sexe').value;
 
-    if (sexo == "Juvenil") {
+    if (categoria.value == "Juvenil") {
         if (sexo == 'Masculino') {
             cat_num = 1;
-            categoria.placeholder = "Juvenil: Masculina";
+            alert(sexo);
+            mensaje_cat.innerText = "Juvenil: Masculina";
             categoria.value = cat_num;
+            alert(categoria.value);
 
         } else if (sexo == 'Femenino') {
             cat_num = 2;
-            categoria.placeholder = "Juvenil: Femenina";
+            alert(sexo);
+            mensaje_cat.innerText = "Juvenil: Femenina";
             categoria.value = cat_num;
+            alert(categoria.value);
         }
-    } else if (sexo == "Júnior") {
+    } else if (categoria.value == "Júnior") {
         if (sexo == 'Masculino') {
             cat_num = 3;
-            categoria.placeholder = "Júnior: Masculina";
+            alert(sexo);
+            mensaje_cat.innerText = "Júnior: Masculina";
             categoria.value = cat_num;
+            alert(categoria.value);
         } else if (sexo == 'Femenino') {
             cat_num = 4;
-            categoria.placeholder = "Júnior: Femenina";
+            alert(sexo);
+            mensaje_cat.innerText = "Júnior: Femenina";
             categoria.value = cat_num;
+            alert(categoria.value);
         }
-    } else if (sexo == "Elite") {
+    } else if (categoria.value == "Elite") {
         if (sexo == 'Masculino') {
             cat_num = 5;
-            categoria.placeholder = "Elite: Masculina";
+            alert(sexo);
+            mensaje_cat.innerText = "Elite: Masculina";
             categoria.value = cat_num;
+            alert(categoria.value);
         } else if (sexo == 'Femenino') {
             cat_num = 6;
-            categoria.placeholder = "Elite: Femenina";
+            alert(sexo);
+            mensaje_cat.innerText = "Elite: Femenina";
             categoria.value = cat_num;
+            alert(categoria.value);
         }
-    } else if (sexo == "Veterano") {
+    } else if (categoria.value == "Veterano") {
         if (sexo == 'Masculino') {
             cat_num = 7;
-            categoria.value = "Veterano: Masculina";
+            alert(sexo);
+            mensaje_cat.innerText = "Veterano: Masculina";
             categoria.value = cat_num;
+            alert(categoria.value);
         } else if (sexo == 'Femenino') {
-            cat = 8;
-            categoria.value = "Veterano: Femenina";
+            cat_num = 8;
+            alert(sexo);
+            mensaje_cat.innerText = "Veterano: Femenina";
             categoria.value = cat_num;
+            alert(categoria.value);
         }
-    } else if (sexo == "Senior") {
+    } else if (categoria.value == "Senior") {
         if (sexo == 'Masculino') {
             cat_num = 9;
-            categoria.value = "Senior: Masculina";
+            alert(sexo);
+            mensaje_cat.innerText = "Senior: Masculina";
             categoria.value = cat_num;
+            alert(categoria.value);
         } else if (sexo == 'Femenino') {
             cat_num = 10;
-            categoria.value = "Senior: Femenina";
+            alert(sexo);
+            mensaje_cat.innerText = "Senior: Femenina";
             categoria.value = cat_num;
+            alert(categoria.value);
         }
     }
+    document.getElementById('invalidez').disabled = false;
 }
 
 function autorellenarInvalidez() {
@@ -124,13 +159,15 @@ function autorellenarInvalidez() {
     if (invalidez == "si") {
         if (sexo == 'Masculino') {
             cat_num = 11;
-            categoria.placeholder = "Discapacidad: Masculino";
+            mensaje_cat.innerText = "Discapacidad: Masculino";
             categoria.value = cat_num;
+            alert(categoria.value);
 
         } else if (sexo == 'Femenino') {
             cat_num = 12;
-            categoria.placeholder = "Discapacidad: Femenino";
+            mensaje_cat.innerText = "Discapacidad: Femenino";
             categoria.value = cat_num;
+            alert(categoria.value);
         }
     }
 }
@@ -159,6 +196,18 @@ function validacionForm() {
         document.getElementById('mensaje').style.padding = "0.5%";
         return false;
     } else {
-        return true;
+        if (validacion == 'false') {
+            document.getElementById('mensaje').style.display = "inline";
+            document.getElementById('mensaje').innerHTML = "<p>DNI incorrecto porfavor reescriva o cambie el DNI</p>";
+            document.getElementById('mensaje').style.color = "black";
+            document.getElementById('mensaje').style.backgroundColor = '#FA788D';
+            document.getElementById('mensaje').style.borderRadius = "4px";
+            document.getElementById('mensaje').style.padding = "0.5%";
+            return false
+
+        } else {
+            return true;
+        }
+
     }
 }

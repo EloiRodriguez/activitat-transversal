@@ -9,6 +9,7 @@
     $data_naix=$_POST['data_naix'];
     $sexe=$_POST['sexe'];
     $cat=$_POST['categoria'];
+    echo $cat;
 
     $part = new Participant($dni_part,$nom_part,$primer_cognom,$segon_cognom,$data_naix,$sexe);
     $partDAO = new ParticipantDao();

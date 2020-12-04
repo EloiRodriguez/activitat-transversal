@@ -69,19 +69,20 @@
 
                 <input type="date" id="data_naix" class="validar" name="data_naix" placeholder="Fecha Nacimento..."><br>
 
-                <select name="sexe" id="sexe" class="validar">
+                <select name="sexe" id="sexe" class="validar" disabled>
                     <option disabled selected value="">Sexo...</option>
                     <option value="Masculino">Hombre</option>
                     <option value="Femenino">Mujer</option>
                 </select><br>
 
-                <select name="invalidez" id="invalidez" class="validar">
+                <select name="invalidez" id="invalidez" class="validar" disabled>
                     <option disabled selected value="">Tiene alguna discapacidad muscular?...</option>
                     <option value="Si">Si</option>
                     <option value="No">No</option>
                 </select><br>
-                <label for="categoria">Categoria Asignada</label>
-                <input type="text" name="categoria" id="categoria" class="validar" disabled><br>
+                <label for="categoria">Categoria Asignada</label><br>
+                <label for="categoria" id="mensaje_cat"></label>
+                <input type="hidden" name="categoria" id="categoria" class="validar"><br>
 
                 <input type="submit" id="error" value="Incrivirse">
             </form>
